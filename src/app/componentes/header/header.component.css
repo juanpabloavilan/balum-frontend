@@ -1,0 +1,29 @@
+nav {
+    min-width: 80vw;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    justify-self: center;
+    background-color: #67568c;
+    color: #FFFFFF;
+    padding: 0rem 1rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+
+}
+
+nav h1{
+    display: block;
+}
+
+.links-container{
+    display: flex;
+    max-width: 500px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+div li {
+    margin: 10px;
+}
