@@ -12,7 +12,11 @@ export class TablaEmprendedoresComponent implements OnInit {
   constructor(private emprendedorService: EmprendedorService) {  }
 
   ngOnInit(): void {
-    this.emprendedorService.getEmprendedores().subscribe((emprendedores)=> this.emprendedoresList=emprendedores)
+    this.emprendedorService.getEmprendedores().subscribe((emprendedores)=>{
+      console.log(emprendedores); 
+      this.emprendedoresList=emprendedores
+    })
+    
   }
 
 }

@@ -17,15 +17,12 @@ const HttpOptions={
   providedIn: 'root'
 })
 export class EmprendedorService {
-  apiURL="http://localhost:8080/competitors/getAll"
-
-
+  apiURL="/api/balum/webresources/emprendedor/getAllEmprendedores"
   constructor(private http:HttpClient) { }
 
   getEmprendedores(): Observable<Emprendedor[]>{
     const url=`${this.apiURL}`
-    let res = this.http.get<Emprendedor[]>(url, HttpOptions)
-    console.log(res);    
+    let res = this.http.get<Emprendedor[]>(url, HttpOptions)  
     return res
     
   }
