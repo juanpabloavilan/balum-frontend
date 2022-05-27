@@ -4,44 +4,27 @@
     <thead>
         <tr>
             <th>Id</th>
-            <th>Proyecto</th>
             <th>Donante</th>
+            <th>Proyecto</th>
             <th>Valor</th>
         </tr>
     </thead>
     <tbody>
-        
-
-        
-        <!--<tr *ngFor="let competitor of competitors ">
+               
+        <tr *ngFor="let donacion of donacionesList ">
             <td>
-                {{competitor.id}}
+                {{donacion.idDonacion}}
             </td>
             <td>
-                {{competitor.name}}
+                {{donacion.idDonante.nombre}}
             </td>
             <td>
-                {{competitor.surname}}
+                {{donacion.idProyecto.descripcion}}
             </td>
             <td>
-                {{competitor.age}}
+                ${{donacion.valor}}
             </td>
-            <td>
-                {{competitor.telephone}}
-            </td>
-            <td>
-                {{competitor.cellphone}}
-            </td>
-            <td>
-                {{competitor.address}}
-            </td>
-            <td>
-                {{competitor.city}}
-            </td>
-            <td>
-                {{competitor.country}}
-            </td>
-        </tr>-->
+        </tr>
         
     </tbody>
 </table>

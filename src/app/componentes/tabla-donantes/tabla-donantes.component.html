@@ -9,6 +9,13 @@
                 <th>Cédula</th>
             </tr>
         </thead>
+        <tbody>
+            <tr *ngFor="let donante of donantesList">
+                <td>{{donante.iddonante}}</td>
+                <td>{{donante.nombre}}</td>
+                <td>{{donante.correo}}</td>
+                <td>{{donante.cedula}}</td>
+            </tr>
+        </tbody>
     </table>
 </div>
-
