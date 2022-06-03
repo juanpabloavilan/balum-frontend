@@ -17,14 +17,36 @@ const HttpOptions={
   providedIn: 'root'
 })
 export class EmprendedorService {
-  apiURL="/api/balum/webresources/emprendedor/getAllEmprendedores"
+  apiURL="/api/balum/webresources/emprendedor"
   constructor(private http:HttpClient) { }
 
   getEmprendedores(): Observable<Emprendedor[]>{
-    const url=`${this.apiURL}`
+    const url=`${this.apiURL}/getAllEmprendedores`
     let res = this.http.get<Emprendedor[]>(url, HttpOptions)  
     return res
-    
   }
+
+  registrarEmprendedor(emprendedor : Emprendedor){
+    const url=`${this.apiURL}/registrarPerfilEmprendedor`
+    let res = this.http.post<Emprendedor>(url, emprendedor)
+    return res
+  }
+
+  actualizarPerfilEmprendedor(emprendedor : Emprendedor){
+    const url=`${this.apiURL}/actualizarPerfilEmprendedor`
+    const res = this.http.put<Emprendedor>(url, emprendedor)
+    return res
+  }
+
+  obtenerPerfilDeEmprendedor(idEmprendedor : number){
+    const url=`${this.apiURL}/obtenerPerfilEmprendedor/${idEmprendedor}`
+    const res = this.http.get<Emprendedor>(url)
+    return res
+
+  }
+
+
+
+
 
 }

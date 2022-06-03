@@ -1,5 +1,12 @@
 <div class="container">
     <h2>Donaciones</h2>
+    <div class="container">
+        <app-button text="Donar" bgcolor="#67568c" color="#FFFF" (onEventClick)="toggleRegistrarDonacion()"></app-button>
+        <app-button text="Buscar Donacion" bgcolor="#67568c" color="#FFFF" (onEventClick)="toggleBuscarDonacion()"></app-button>
+    </div>
+    <app-donaciones-form *ngIf="toggleFormTab === 2" titulo="Donar" (onSubmitForm)="registrarDonacion($event)"></app-donaciones-form>
+    <app-buscar-form *ngIf="toggleFormTab===1"  titulo="Buscar Donancion" (onSubmitBuscar)="buscarDonacion($event)"></app-buscar-form>
+    
 <table class="table">
     <thead>
         <tr>

@@ -1,0 +1,40 @@
+<div class="container">
+    <h2>Proyectos</h2>
+    <div class="container">
+        <app-button text="Publicar Proyecto" color="#1f1235" bgcolor="#ff6e6c" (onEventClick)="toggleRegistrarProyecto()"></app-button>
+        <app-button text="Buscar Proyecto" color="#1f1235" bgcolor="#fbdd74" (onEventClick)="toggleBuscarProyecto()"></app-button>
+    </div>
+    <app-proyecto-form *ngIf="toggleFormTab === 2" titulo="Crear Proyecto" (onSubmitForm)="registrarProyecto($event)"></app-proyecto-form>
+    <app-proyecto-form *ngIf="toggleFormTab === 3" titulo="ActualizarProyecto" (onSubmitForm)="actualizarProyecto($event)"></app-proyecto-form>
+    <app-buscar-form *ngIf="toggleFormTab === 1" titulo="Buscar Proyecto" (onSubmitBuscar)="buscarProyecto($event)"></app-buscar-form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Descripcion</th>
+                <th>Valor Objetivo</th>
+                <th>Fecha Inicio</th>
+                <th>Fecha Final</th>
+                <th>Tipo de Proyecto</th>
+                <th>Emprendedor</th>
+                <th>Estado</th>
+                <th> </th> 
+            </tr>
+        </thead>  
+        <tbody>
+            <tr *ngFor="let proyecto of listaProyectos">
+                <td> {{proyecto.idproyecto}}</td>
+                <td> {{proyecto.descripcion}}</td>
+                <td> {{proyecto.valorObjetivo}}</td>
+                <td> {{proyecto.fechaInicio}}</td>
+                <td> {{proyecto.fechaFinal}}</td>
+                <td> {{proyecto.tipoProyecto}}</td>
+                <td> {{proyecto.responsable.nombre}}</td>
+                <td> {{proyecto.estado}}</td>  
+                <app-button text="Actualizar" color="#1f1235" bgcolor="#ff6e6c" (onEventClick)="toggleActualizarProyecto(proyecto.idproyecto)"></app-button>              
+            </tr>
+            
+        </tbody>
+    </table>
+</div>
+

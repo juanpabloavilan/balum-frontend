@@ -1,0 +1,10 @@
+<div class="container">
+    <h3>{{titulo}}</h3>
+    <form (ngSubmit)="emitSubmit()">
+        <mat-form-field>
+            <input matInput placeholder="id" name="id" id="id" [(ngModel)]="id">
+        </mat-form-field>
+        
+        <button mat-raised-button color="primary" type="submit">Buscar</button>
+    </form>
+</div>

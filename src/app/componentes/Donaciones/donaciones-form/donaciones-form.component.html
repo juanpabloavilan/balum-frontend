@@ -1,0 +1,17 @@
+<div class="container">
+    <h3>{{titulo}}</h3>
+    <form (ngSubmit)="emitSubmit()">
+        <mat-form-field>
+            <input matInput placeholder="Identificador del Donante" name="idDonante" id="idDonante" [(ngModel)]="idDonante" class="input-form">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Identificador del proyecto" name="idProyecto" id="idProyecto" [(ngModel)]="idProyecto" class="input-form">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Valor a donar" name="valor" id="valor" [(ngModel)]="valor" class="input-form">
+        </mat-form-field>
+
+        <button mat-raised-button color="primary">Enviar</button>
+    </form>
+    
+</div>

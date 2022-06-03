@@ -1,0 +1,32 @@
+<div class="container">
+    <h2>Donantes</h2>
+    <div class="container">
+        <app-button text="Registrar Donante" bgcolor="#67568c" color="#FFFF" (onEventClick)="toggleRegistrarDonante()"></app-button>
+        <app-button text="Buscar Donante" bgcolor="#67568c" color="#FFFF" (onEventClick)="toggleBuscarDonante()"></app-button>
+    </div>
+    <app-donante-form *ngIf="toggleFormTab === 2" titulo="Registrar Donante" (onSubmitForm)="registrarDonante($event)"></app-donante-form>
+    <app-donante-form *ngIf="toggleFormTab===3" titulo="Actualizar Donante" (onSubmitForm)="actualizarDonante($event)"></app-donante-form>
+    <app-buscar-form *ngIf="toggleFormTab===1"  titulo="Buscar Donante" (onSubmitBuscar)="buscarDonante($event)"></app-buscar-form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Cédula</th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let donante of donantesList">
+                <td>{{donante.iddonante}}</td>
+                <td>{{donante.nombre}}</td>
+                <td>{{donante.correo}}</td>
+                <td>{{donante.cedula}}</td>
+                <td>
+                    <app-button text="Actualizar" bgcolor="#67568c" color="#FFFF" (onEventClick)="toggleActualizarDonante(donante.iddonante)"></app-button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

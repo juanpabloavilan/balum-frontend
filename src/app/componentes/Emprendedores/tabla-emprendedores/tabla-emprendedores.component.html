@@ -1,0 +1,45 @@
+<div class="container">
+    <h2>Emprendedores</h2>
+    <div class="container">
+        <app-button text="Registrar Emprendedor" bgcolor="#67568c" color="#FFFF" (onEventClick)="toggleRegistrarEmprendedor()"></app-button>
+        <app-button text="Buscar Emprendedor" bgcolor="#67568c" color="#FFFF" (onEventClick)="toggleBuscarEmprendedor()"></app-button>
+    </div>
+    <app-emprendedor-form *ngIf="toggleFormTab === 2" titulo="Registrar Emprendedor" (onSubmitForm)="registrarEmprendedor($event)"></app-emprendedor-form>
+    <app-emprendedor-form *ngIf="toggleFormTab===3" titulo="Actualizar Emprendedor" (onSubmitForm)="actualizarEmprendedor($event)"></app-emprendedor-form>
+    <app-buscar-form *ngIf="toggleFormTab===1"  titulo="Buscar Emprendedor" (onSubmitBuscar)="buscarEmprendedor($event)"></app-buscar-form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Cedula</th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody>
+                        
+    
+                        
+            <tr *ngFor="let emprendedor of emprendedoresList ">
+                <td>
+                    {{emprendedor.idEmprendedor}}
+                </td>
+                <td>
+                    {{emprendedor.nombre}}
+                </td>
+                <td>
+                    {{emprendedor.correo}}
+                </td>
+                <td>
+                    {{emprendedor.cedula}}
+                </td>
+                <td>
+                    <app-button text="Actualizar" bgcolor="#67568c" color="#FFFF" (onEventClick)="toggleActualizarEmprendedor(emprendedor.idEmprendedor)"></app-button>
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
+</div>
+

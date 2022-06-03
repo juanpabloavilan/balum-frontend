@@ -1,5 +1,5 @@
 export interface Donante {
-    iddonante?: number
+    iddonante: number
     nombre:string
     correo:string
     cedula:string

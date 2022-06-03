@@ -1,0 +1,41 @@
+<div class="container">
+    <h3>{{titulo}}</h3>
+    <form (ngSubmit)="emitSubmit()">
+        <mat-form-field>
+            <input matInput placeholder="descripción" name="descripcion" id="descripcion" [(ngModel)]="descripcion" class="input-form">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="valor objetivo" name="valorObjetivo" id="valorObjetivo" [(ngModel)]="valorObjetivo" class="input-form">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Fecha de Inicio</mat-label>
+            <input matInput [matDatepicker]="picker" name="fechaInicio" id="fechaInicio" [(ngModel)]="fechaInicio"  >
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Fecha Final</mat-label>
+            <input matInput [matDatepicker]="picker1" placeholder="fecha final" name="fechaFinal" id="fechaFinal" [(ngModel)]="fechaFinal"  >
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Tipo de proyecto" name="tipoProyecto" id="tipoProyecto" [(ngModel)]="tipoProyecto" class="input-form">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Id Emprendedor" name="responsable" id="responsable" [(ngModel)]="responsable" class="input-form">
+        </mat-form-field>
+          
+
+
+
+        <button mat-raised-button color="primary">Enviar</button>
+    </form>
+    
+</div>

@@ -1,0 +1,17 @@
+<div class="container">
+    <h3>{{titulo}}</h3>
+    <form (ngSubmit)="emitSubmit()">
+        <mat-form-field>
+            <input matInput placeholder="nombre" name="nombre" id="nombre" [(ngModel)]="nombre" class="input-form">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="correo" name="correo" id="correo" [(ngModel)]="correo" class="input-form">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="cedula" name="cedula" id="cedula" [(ngModel)]="cedula" class="input-form">
+        </mat-form-field>
+
+        <button mat-raised-button color="primary">Enviar</button>
+    </form>
+    
+</div>
